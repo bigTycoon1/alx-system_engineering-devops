@@ -17,9 +17,9 @@ if __name__ == '__main__':
         if re.fullmatch(r'\d+', sys.argv[1]):
             id = int(sys.argv[1])
             user_response = requests.get('{}/users/{}'.format(API, id)).json()
-            todos_response = requests.get('{}/todos'.format(API)).json()
+            todos_resp = requests.get('{}/todos'.format(API)).json()
             user_name = user_response.get('username')
-            todos = list(filter(lambda x: x.get('userId') == id, todos_response))
+            todos = list(filter(lambda x: x.get('userId') == id, todos_resp))
             with open('{}.csv'.format(id), 'w') as file:
                 for todo in todos:
                     file.write(
