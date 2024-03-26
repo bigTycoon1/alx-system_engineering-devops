@@ -3,9 +3,10 @@
 Using https://jsonplaceholder.typicode.com
 to returns info about employee TODO progress
 """
+import re
 import requests
 import sys
-import re
+
 
 API = "https://jsonplaceholder.typicode.com"
 """REST API url"""
