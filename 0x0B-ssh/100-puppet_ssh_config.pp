@@ -1,5 +1,5 @@
-#!user/bin/env bash
-# using puppet to connect without passwrd
+# Seting up your client config file
+include stdlib
 
 file_line { 'Turn off passwd auth':
   ensure => present,
