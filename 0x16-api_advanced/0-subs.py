@@ -3,7 +3,6 @@
 contains the function numbers_of_subscriber
 '''
 import requests
-import sys
 
 
 def number_of_subscribers(subreddit):
