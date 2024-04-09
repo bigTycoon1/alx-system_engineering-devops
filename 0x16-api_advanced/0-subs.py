@@ -13,12 +13,12 @@ def number_of_subscribers(subreddit):
     }
 
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    response = requests.get(url, headers=headers, allow_redirects=False)
-    if response.status_code != 200:
+    resp = requests.get(url, headers=headers, allow_redirects=False)
+    if resp.status_code != 200:
         return 0
-    dic = response.json()
+    dic = resp.json()
     if 'data' not in dic:
         return 0
     if 'subscribers' not in dic.get('data'):
         return 0
-    return response.json()['data']['subscribers']
+    return resp.json()['data']['subscribers']
